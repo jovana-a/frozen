@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brother EuroCIS 25 Frozen Joghurt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('messe.jpg');
+            background-size: cover;
+            color: #35C4B5;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Bluebar.jpg" alt="Logo" class="logo">
+        <h1>Brother EuroCIS 25</h1>
+        <h2>Frozen Joghurt</h2>
+        <div class="section">
+            <h2>Name:</h2>
+            <input type="text" id="customerName" placeholder="Dein Name">
+        </div>
+        <div class="section">
+            <h2>Joghurtgeschmack:</h2>
+            <p>Vanille</p>
+        </div>
+        <div class="section">
+            <h2>Wähle deine Soße:</h2>
+            <select id="sauce">
+                <option value="Karamell">Karamell</option>
+                <option value="Weiße Schokolade">Weiße Schokolade</option>
+                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Mango">Mango</option>
+            </select>
+        </div>
+        <div class="section">
+            <h2>Wähle bis zu 3 Toppings:</h2>
+            <input type="checkbox" name="toppings" value="Schokolinsen"> Schokolinsen<br>
+            <input type="checkbox" name="toppings" value="Schokostreusel"> Schokostreusel<br>
+            <input type="checkbox" name="toppings" value="Haselnusskrokant"> Haselnusskrokant<br>
+            <input type="checkbox" name="toppings" value="Bunte Streusel"> Bunte Streusel<br>
+            <input type="checkbox" name="toppings" value="Kokosraspeln"> Kokosraspeln<br>
+            <input type="checkbox" name="toppings" value="Knusper-Müsli"> Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Schoko-Knusper-Müsli"> Schoko-Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Erdbeeren"> Erdbeeren<br>
+            <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
+            <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
+        </div>
+        <button onclick="showSummary()">Absenden</button>
+        <div id="summary" class="section"></div>
+        <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
