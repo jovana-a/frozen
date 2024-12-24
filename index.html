@@ -25,6 +25,17 @@
             width: 100%;
             margin-bottom: 20px;
         }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .url-scheme {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +76,14 @@
         </div>
         <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
-        <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+        <div class="buttons">
+            <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+            <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
+        </div>
+        <div id="urlScheme" class="url-scheme" style="display:none;">
+            <h3>Smooth Print URL Scheme</h3>
+            <p id="urlSchemeText"></p>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
