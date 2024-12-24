@@ -19,16 +19,27 @@ function showSummary() {
 
     document.getElementById('summary').innerHTML = summary;
     document.getElementById('printButton').style.display = 'block';
+    document.getElementById('previewButton').style.display = 'block';
 }
 
 function sendToPrint() {
+    const url = generateUrlScheme();
+    window.open(url, '_blank');
+}
+
+function previewLink() {
+    const url = generateUrlScheme();
+    document.getElementById('urlSchemeText').textContent = url;
+    document.getElementById('urlScheme').style.display = 'block';
+}
+
+function generateUrlScheme() {
     const customerName = document.getElementById('customerName').value;
     const flavor = "Vanille";
     const sauce = document.getElementById('sauce').value;
-    const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value);
+    const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-    const url = `brotherwebprint://print?filename=joghurt.lbx&50x70.bin&text_name=${encodeURIComponent(customerName)}&text_flavor=${encodeURIComponent(flavor)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings.join(', '))}`;
-    window.open(url, '_blank');
+    return `brotherwebprint://print?filename=joghurt.lbx&50x70.bin&text_name=${encodeURIComponent(customerName)}&text_flavor=${encodeURIComponent(flavor)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
 }
 
 // Limit the selection of toppings to a maximum of 3
