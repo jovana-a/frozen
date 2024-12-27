@@ -10,7 +10,7 @@ function showSummary() {
     }
 
     const summary = `
-        <h2>Dein Frozen Yogurt</h2>
+        <h2>Dein Frozen Joghurt</h2>
         <p><strong>Name:</strong> ${customerName}</p>
         <p><strong>Geschmack:</strong> ${flavor}</p>
         <p><strong>Soße:</strong> ${sauce}</p>
