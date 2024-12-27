@@ -1,6 +1,5 @@
 function showSummary() {
     const customerName = document.getElementById('customerName').value;
-    const flavor = "Vanille";
     const sauce = document.getElementById('sauce').value;
     const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value);
 
@@ -12,7 +11,6 @@ function showSummary() {
     const summary = `
         <h2>Dein Frozen Joghurt</h2>
         <p><strong>Name:</strong> ${customerName}</p>
-        <p><strong>Geschmack:</strong> ${flavor}</p>
         <p><strong>Soße:</strong> ${sauce}</p>
         <p><strong>Toppings:</strong> ${toppings.join(', ')}</p>
     `;
@@ -35,11 +33,10 @@ function previewLink() {
 
 function generateUrlScheme() {
     const customerName = document.getElementById('customerName').value;
-    const flavor = "Vanille";
     const sauce = document.getElementById('sauce').value;
     const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-    return `brotherwebprint://print?filename=joghurt.lbx&50x70.bin&text_name=${encodeURIComponent(customerName)}&text_flavor=${encodeURIComponent(flavor)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+    return `brotherwebprint://print?filename=joghurt.lbx&50x70.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
 }
 
 // Limit the selection of toppings to a maximum of 3
