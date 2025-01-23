@@ -36,7 +36,7 @@ function generateUrlScheme() {
     const sauce = document.getElementById('sauce').value;
     const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-    return `brotherwebprint://print?filename=joghurt.lbx&size=50x70.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+    return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
 }
 
 // Limit the selection of toppings to a maximum of 3
