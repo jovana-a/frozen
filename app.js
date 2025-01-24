@@ -23,6 +23,7 @@ function showSummary() {
 function sendToPrint() {
     const url = generateUrlScheme();
     window.open(url, '_blank');
+    resetInputs();
 }
 
 function previewLink() {
@@ -37,6 +38,16 @@ function generateUrlScheme() {
     const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
     return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+}
+
+function resetInputs() {
+    document.getElementById('customerName').value = '';
+    document.getElementById('sauce').selectedIndex = 0;
+    document.querySelectorAll('input[name="toppings"]').forEach(checkbox => checkbox.checked = false);
+    document.getElementById('summary').innerHTML = '';
+    document.getElementById('printButton').style.display = 'none';
+    document.getElementById('previewButton').style.display = 'none';
+    document.getElementById('urlScheme').style.display = 'none';
 }
 
 // Limit the selection of toppings to a maximum of 3
